@@ -5,13 +5,13 @@ import { Plus, X, Users } from "lucide-react";
 import { toast } from "react-toastify";
 
 const getUsers = async () => {
-  const resp = await axios.get("http://localhost:8080");
+  const resp = await axios.get(import.meta.env.VITE_API_URL);
 
   return resp.data;
 }
 
 const addNewUser = async (newUserData) => {
-  const resp = await axios.post("http://localhost:8080", newUserData)
+  const resp = await axios.post(import.meta.env.VITE_API_URL, newUserData)
 
   return resp.data;
 }
